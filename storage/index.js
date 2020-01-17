@@ -2,8 +2,8 @@ const redis = require('redis');
 let client;
 
 module.exports = {
-    init: function(){
-        client = redis.createClient();
+    init: function(config){
+        client = redis.createClient(config);
         client.on('error', (err)=>{
             console.error(err.stack || err);
         });

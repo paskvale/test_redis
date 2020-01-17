@@ -6,7 +6,7 @@ const services = require('./services');
 const config = require('./config');
 (async ()=>{
     try {
-        await storage.init();
+        await storage.init(config.redisConfig);
 
         try{
             await services.startMessagesOut(console);
